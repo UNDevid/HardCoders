@@ -5,12 +5,13 @@ public class CacheServer {
 private int idCacheServer;
 private int latencyCache;
 private int cacheSize;
-private List <Video> videoList = new List();
+private ArrayList<Video> videoList;
 
-  public CacheServer(int id, int size, int latency){
+  public CacheServer(int id, int size, int latency, ArrayList<Video> videoList){
     idCacheServer = id;
     cacheSize = size;
     latencyCache=latency;
+    videoList = new ArrayList<>();
   }
   public void insertVideo(Video newVideo){
     videoList.add(newVideo);
@@ -40,11 +41,11 @@ private List <Video> videoList = new List();
 		this.cacheSize = cacheSize;
 	}
 
-	public List<Video> getVideoList() {
+	public ArrayList<Video> getVideoList() {
 		return videoList;
 	}
 
-	public void setVideoList(List<Video> videoList) {
+	public void setVideoList(ArrayList<Video> videoList) {
 		this.videoList = videoList;
 	}
 
