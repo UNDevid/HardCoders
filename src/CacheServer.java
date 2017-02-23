@@ -13,7 +13,11 @@ private ArrayList<Video> videoList;
     latencyCache=latency;
     videoList = new ArrayList<>();
   }
+  public int getFreeMegabyte(){
+    return cacheSize();
+  }
   public void insertVideo(Video newVideo){
+    cacheSize=cacheSize-newVideo.size();
     videoList.add(newVideo);
 
   }
