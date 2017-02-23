@@ -43,4 +43,9 @@ public class RequestDescription{
 	}
 
 
+
+	@Override
+	public String toString() {
+		return "RequestDescription [idVideo=" + idVideo + ", idEndpoint=" + idEndpoint + ", requestsNumber=" + requestsNumber + "]";
+	}
 }
