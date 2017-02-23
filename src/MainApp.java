@@ -1,10 +1,12 @@
 public class MainApp{
   public List <Video> videosList;
   public List <Endpoint> endpointsList;
-  public List <RequestDescription> requestDescriptions;
+  public static List <RequestDescription> requestDescriptions;
   public List <CacheServer> cacheServers;
 
+  private static sortVideos(List <Video> listofVideos){
 
+  }
   public static void main(){
     FileUtils.read_file();
     // sortVideos for each endopoint add a list to the endpoint.
@@ -26,6 +28,6 @@ public class MainApp{
         }
       }
     }
-    
+
   }
 }

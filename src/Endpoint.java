@@ -19,6 +19,24 @@ public class Endpoint {
     this.requestedVideo = listofVideos;
   }
   public List <Video> getRequestedVideo(){
+    RequestDescription tempRequest;
+    for(int i = 0; i<MainApp.requestDescriptions.size();i++){
+      tempRequest=MainApp.RequestDescriptions.get(i);
+      if(id==tempRequest.getIdEndpoint){
+        for(int j=0;j<requestedVideo.size();j++){
+          if(requestedVideo.get(j).getId()==tempRequest.getIdVideo()){
+            requestedVideo.get(j).settempRequestsNumber(tempRequest.getRequestsNumber());
+          }
+        }
+      }
+    }
+    Collections.sort(requestedVideo, new Comparator<Video>()) {
+                @Override
+                public int compare(Video lhs, Video rhs) {
+                    // -1 - less than, 1 - greater than, 0 - equal, all inversed for descending
+                    return lhs.getRequestsNumber > rhs.getRequestsNumber ? -1 : (lhs.getRequestsNumber < rhs.getRequestsNumber ) ? 1 : 0;
+                }
+            });
     return requestedVideo;
   }
   public CacheServer getFreeMegabyte(int requestMegabytes){
