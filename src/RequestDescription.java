@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class RequestDescription{
 
   private int idVideo;
@@ -15,7 +17,7 @@ public class RequestDescription{
 		this.requestsNumber = requestsNumber;
 	}
 
-  
+
 	public int getIdVideo() {
 		return idVideo;
 	}
